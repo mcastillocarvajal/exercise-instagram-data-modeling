@@ -11,9 +11,9 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
-    username = Column(String(250), nullable=False)
-    firstname = Column(String(250), nullable=False)
-    lastname = Column(String(250), nullable=False)
+    username = Column(String(12), nullable=False unique=True)
+    email = Column(String(50), nullable=False unique=True)
+
 
 class Follower(Base):
     __tablename__ = 'follower'
